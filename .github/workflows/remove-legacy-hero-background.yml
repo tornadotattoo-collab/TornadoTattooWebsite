@@ -1,0 +1,44 @@
+name: Remove legacy hero background
+
+on:
+  push:
+    branches:
+      - agent/technical-seo-image-schema
+    paths:
+      - .github/workflows/remove-legacy-hero-background.yml
+
+permissions:
+  contents: write
+
+jobs:
+  clean:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/technical-seo-image-schema
+          fetch-depth: 0
+
+      - name: Remove the obsolete CSS background image
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          path = Path('styles.css')
+          text = path.read_text(encoding='utf-8')
+          old = '.hero-image { min-height: 590px; position: relative; background: linear-gradient(90deg, var(--bg), transparent 30%), url("assets/josh-at-work.jpg") center 42%/cover no-repeat; animation: image-in .9s ease both; }'
+          new = '.hero-image { min-height: 590px; position: relative; background: #111; animation: image-in .9s ease both; }'
+          if old not in text:
+              raise SystemExit('Legacy hero background rule was not found')
+          path.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+
+      - name: Commit the cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add styles.css
+          git diff --cached --check
+          git commit -m "Remove the legacy hero background request"
+          git push origin HEAD:agent/technical-seo-image-schema
