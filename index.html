@@ -15,6 +15,7 @@
   <meta name="theme-color" content="#0b0b0c">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="homepage-enhancements.css">
   <script src="app.js" defer></script>
   <script type="application/ld+json">
     {
@@ -22,7 +23,10 @@
       "@type": "TattooParlor",
       "name": "Tornado Tattoo",
       "url": "https://tornadotattoo.com/",
-      "image": "https://tornadotattoo.com/assets/josh-at-work.jpg",
+      "image": [
+        "https://tornadotattoo.com/assets/josh-at-work.jpg",
+        "https://tornadotattoo.com/assets/tornado-tattoo-shop-oklahoma-city.webp"
+      ],
       "telephone": "+1-405-601-4445",
       "email": "tornadotattoookc@gmail.com",
       "foundingDate": "2006",
@@ -77,6 +81,12 @@
         <button class="service-card service-open" type="button" data-gallery="horror" aria-haspopup="dialog"><span>03</span><h3>Horror</h3><p>Dark, cinematic artwork ranging from iconic characters to original concepts with texture, depth, and atmosphere.</p><span class="service-action">View work <span>→</span></span></button>
         <button class="service-card service-open" type="button" data-gallery="traditional" aria-haspopup="dialog"><span>04</span><h3>Traditional</h3><p>Bold lines, confident color, and timeless imagery built with the visual clarity that makes traditional work endure.</p><span class="service-action">View work <span>→</span></span></button>
       </div>
+      <nav class="service-page-links" aria-label="Detailed tattoo style guides">
+        <a href="cover-up-tattoos-oklahoma-city.html">Cover-Up Tattoo Guide <span aria-hidden="true">→</span></a>
+        <a href="japanese-tattoos-oklahoma-city.html">Japanese Tattoo Guide <span aria-hidden="true">→</span></a>
+        <a href="horror-tattoos-oklahoma-city.html">Horror Tattoo Guide <span aria-hidden="true">→</span></a>
+        <a href="traditional-tattoos-oklahoma-city.html">Traditional Tattoo Guide <span aria-hidden="true">→</span></a>
+      </nav>
     </section>
 
     <div class="style-gallery-modal" id="style-gallery-modal" role="dialog" aria-modal="true" aria-labelledby="style-gallery-title" aria-describedby="style-gallery-description" hidden>
@@ -96,57 +106,39 @@
       <div class="section-heading light-heading"><div><p class="eyebrow">Selected work</p><h2>The portfolio should do the selling.</h2></div><p>Explore a selection of Josh’s work across Japanese, traditional, black-and-gray, ornamental, and full-color tattooing. Select any image to see the complete piece up close.</p></div>
       <div class="portfolio-grid" aria-label="Selected tattoos by Josh Poindexter">
         <article class="portfolio-tile portfolio-featured">
-          <button class="portfolio-open portfolio-contain" type="button" data-title="Japanese samurai backpiece" data-category="Japanese • Large-scale" aria-label="View Japanese samurai backpiece full size">
-            <img class="portfolio-image" src="assets/josh-samurai-backpiece.webp" width="1080" height="1080" loading="lazy" decoding="async" alt="Large Japanese samurai, temple, and mountain backpiece tattoo by Josh Poindexter">
-          </button>
+          <button class="portfolio-open portfolio-contain" type="button" data-title="Japanese samurai backpiece" data-category="Japanese • Large-scale" aria-label="View Japanese samurai backpiece full size"><img class="portfolio-image" src="assets/josh-samurai-backpiece.webp" width="1080" height="1080" loading="lazy" decoding="async" alt="Large Japanese samurai, temple, and mountain backpiece tattoo by Josh Poindexter"></button>
           <div><h3>Japanese samurai backpiece</h3><p>Japanese • Large-scale</p></div>
         </article>
         <article class="portfolio-tile portfolio-featured">
-          <button class="portfolio-open" type="button" data-title="Tiger and skulls backpiece" data-category="Black &amp; Gray • Large-scale" aria-label="View tiger and skulls backpiece full size">
-            <img class="portfolio-image" src="assets/josh-tiger-skulls-backpiece.webp" width="1350" height="1800" loading="lazy" decoding="async" alt="Large black-and-gray tiger and skulls backpiece tattoo by Josh Poindexter">
-          </button>
+          <button class="portfolio-open" type="button" data-title="Tiger and skulls backpiece" data-category="Black &amp; Gray • Large-scale" aria-label="View tiger and skulls backpiece full size"><img class="portfolio-image" src="assets/josh-tiger-skulls-backpiece.webp" width="1350" height="1800" loading="lazy" decoding="async" alt="Large black-and-gray tiger and skulls backpiece tattoo by Josh Poindexter"></button>
           <div><h3>Tiger and skulls backpiece</h3><p>Black &amp; Gray • Large-scale</p></div>
         </article>
         <article class="portfolio-tile">
-          <button class="portfolio-open" type="button" data-title="Ornamental mandala leg sleeve" data-category="Ornamental • Linework" aria-label="View ornamental mandala leg sleeve full size">
-            <img class="portfolio-image" src="assets/josh-ornamental-mandala-leg.webp" width="1350" height="1800" loading="lazy" decoding="async" alt="Full ornamental mandala leg sleeve tattoo by Josh Poindexter">
-          </button>
+          <button class="portfolio-open" type="button" data-title="Ornamental mandala leg sleeve" data-category="Ornamental • Linework" aria-label="View ornamental mandala leg sleeve full size"><img class="portfolio-image" src="assets/josh-ornamental-mandala-leg.webp" width="1350" height="1800" loading="lazy" decoding="async" alt="Full ornamental mandala leg sleeve tattoo by Josh Poindexter"></button>
           <div><h3>Ornamental mandala leg sleeve</h3><p>Ornamental • Linework</p></div>
         </article>
         <article class="portfolio-tile">
-          <button class="portfolio-open" type="button" data-title="Traditional tiger" data-category="Traditional • Color" aria-label="View traditional tiger tattoo full size">
-            <img class="portfolio-image" src="assets/josh-traditional-tiger-shoulder.webp" width="1718" height="1800" loading="lazy" decoding="async" alt="Bold color traditional tiger shoulder tattoo by Josh Poindexter">
-          </button>
+          <button class="portfolio-open" type="button" data-title="Traditional tiger" data-category="Traditional • Color" aria-label="View traditional tiger tattoo full size"><img class="portfolio-image" src="assets/josh-traditional-tiger-shoulder.webp" width="1718" height="1800" loading="lazy" decoding="async" alt="Bold color traditional tiger shoulder tattoo by Josh Poindexter"></button>
           <div><h3>Traditional tiger</h3><p>Traditional • Color</p></div>
         </article>
         <article class="portfolio-tile">
-          <button class="portfolio-open" type="button" data-title="Blue gemstone sleeve" data-category="Ornamental • Color" aria-label="View blue gemstone sleeve full size">
-            <img class="portfolio-image" src="assets/josh-blue-gemstone-sleeve.webp" width="1350" height="1800" loading="lazy" decoding="async" alt="Blue gemstone and ornamental color sleeve tattoo by Josh Poindexter">
-          </button>
+          <button class="portfolio-open" type="button" data-title="Blue gemstone sleeve" data-category="Ornamental • Color" aria-label="View blue gemstone sleeve full size"><img class="portfolio-image" src="assets/josh-blue-gemstone-sleeve.webp" width="1350" height="1800" loading="lazy" decoding="async" alt="Blue gemstone and ornamental color sleeve tattoo by Josh Poindexter"></button>
           <div><h3>Blue gemstone sleeve</h3><p>Ornamental • Color</p></div>
         </article>
         <article class="portfolio-tile">
-          <button class="portfolio-open" type="button" data-title="Black-and-gray wolf hand" data-category="Black &amp; Gray • Hand" aria-label="View black-and-gray wolf hand tattoo full size">
-            <img class="portfolio-image" src="assets/josh-wolf-hand.webp" width="1350" height="1800" loading="lazy" decoding="async" alt="Black-and-gray snarling wolf hand tattoo with red eyes by Josh Poindexter">
-          </button>
+          <button class="portfolio-open" type="button" data-title="Black-and-gray wolf hand" data-category="Black &amp; Gray • Hand" aria-label="View black-and-gray wolf hand tattoo full size"><img class="portfolio-image" src="assets/josh-wolf-hand.webp" width="1350" height="1800" loading="lazy" decoding="async" alt="Black-and-gray snarling wolf hand tattoo with red eyes by Josh Poindexter"></button>
           <div><h3>Black-and-gray wolf hand</h3><p>Black &amp; Gray • Hand</p></div>
         </article>
         <article class="portfolio-tile">
-          <button class="portfolio-open" type="button" data-title="Traditional panther" data-category="Traditional • Color" aria-label="View traditional panther tattoo full size">
-            <img class="portfolio-image" src="assets/josh-traditional-panther.webp" width="1350" height="1800" loading="lazy" decoding="async" alt="Bold black and red traditional panther tattoo by Josh Poindexter">
-          </button>
+          <button class="portfolio-open" type="button" data-title="Traditional panther" data-category="Traditional • Color" aria-label="View traditional panther tattoo full size"><img class="portfolio-image" src="assets/josh-traditional-panther.webp" width="1350" height="1800" loading="lazy" decoding="async" alt="Bold black and red traditional panther tattoo by Josh Poindexter"></button>
           <div><h3>Traditional panther</h3><p>Traditional • Color</p></div>
         </article>
         <article class="portfolio-tile">
-          <button class="portfolio-open" type="button" data-title="Color apple branch" data-category="Botanical • Color" aria-label="View color apple branch tattoo full size">
-            <img class="portfolio-image" src="assets/josh-color-apple-branch.webp" width="1350" height="1800" loading="lazy" decoding="async" alt="Realistic red apples and green leaves color tattoo by Josh Poindexter">
-          </button>
+          <button class="portfolio-open" type="button" data-title="Color apple branch" data-category="Botanical • Color" aria-label="View color apple branch tattoo full size"><img class="portfolio-image" src="assets/josh-color-apple-branch.webp" width="1350" height="1800" loading="lazy" decoding="async" alt="Realistic red apples and green leaves color tattoo by Josh Poindexter"></button>
           <div><h3>Color apple branch</h3><p>Botanical • Color</p></div>
         </article>
         <article class="portfolio-tile">
-          <button class="portfolio-open" type="button" data-title="Color lighthouse" data-category="Illustrative • Color" aria-label="View color lighthouse tattoo full size">
-            <img class="portfolio-image" src="assets/josh-color-lighthouse.webp" width="1350" height="1800" loading="lazy" decoding="async" alt="Bright illustrative lighthouse and ocean color tattoo by Josh Poindexter">
-          </button>
+          <button class="portfolio-open" type="button" data-title="Color lighthouse" data-category="Illustrative • Color" aria-label="View color lighthouse tattoo full size"><img class="portfolio-image" src="assets/josh-color-lighthouse.webp" width="1350" height="1800" loading="lazy" decoding="async" alt="Bright illustrative lighthouse and ocean color tattoo by Josh Poindexter"></button>
           <div><h3>Color lighthouse</h3><p>Illustrative • Color</p></div>
         </article>
       </div>
@@ -155,17 +147,14 @@
     <div class="portfolio-lightbox" id="portfolio-lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
       <button class="lightbox-close" type="button" aria-label="Close full-size tattoo image">×</button>
       <button class="lightbox-nav lightbox-previous" type="button" aria-label="View previous tattoo">←</button>
-      <figure>
-        <img id="lightbox-image" alt="">
-        <figcaption><h3 id="lightbox-title"></h3><p id="lightbox-category"></p></figcaption>
-      </figure>
+      <figure><img id="lightbox-image" alt=""><figcaption><h3 id="lightbox-title"></h3><p id="lightbox-category"></p></figcaption></figure>
       <button class="lightbox-nav lightbox-next" type="button" aria-label="View next tattoo">→</button>
     </div>
 
     <section class="section artist-section" id="artists">
       <div class="section-heading"><div><p class="eyebrow">Meet the artists</p><h2>Experience you can see before you book.</h2></div><p>Meet the artists behind Tornado Tattoo and find the right fit for your idea. Explore their specialties, experience, and work before choosing who you’d like to book with.</p></div>
       <div class="artist-grid">
-        <article class="artist-card"><img class="artist-photo" src="assets/josh-poindexter.jpg" alt="Josh Poindexter, owner and tattoo artist at Tornado Tattoo"><div class="artist-copy"><p>Owner • Artist</p><h3>Josh Poindexter</h3><span>Japanese • Horror • Color • Traditional • Cover-Ups</span><p>Owner and artist at Tornado Tattoo since 2006, with more than two decades of experience creating custom work in Oklahoma.</p><a href="https://www.instagram.com/tornadotattoo/" target="_blank" rel="noopener noreferrer">View Josh’s work <span>→</span></a></div></article>
+        <article class="artist-card"><img class="artist-photo" src="assets/josh-poindexter.jpg" alt="Josh Poindexter, owner and tattoo artist at Tornado Tattoo"><div class="artist-copy"><p>Owner • Artist</p><h3>Josh Poindexter</h3><span>Japanese • Horror • Color • Traditional • Cover-Ups</span><p>Owner and artist at Tornado Tattoo since 2006, with more than two decades of experience creating custom work in Oklahoma.</p><a href="josh-poindexter-tattoo-artist-oklahoma-city.html">Meet Josh and explore his work <span>→</span></a></div></article>
         <article class="artist-card"><img class="artist-photo" src="assets/selena-gjovaag.jpg" alt="Selena Gjovaag, tattoo artist at Tornado Tattoo"><div class="artist-copy"><p>Artist</p><h3>Selena Gjovaag</h3><span>Illustrative Linework • Black &amp; Gray</span><p>An artist with a background in education and a focus on illustrative linework, thoughtful composition, and black-and-gray pieces.</p><a href="#contact">View Selena’s future portfolio <span>→</span></a></div></article>
       </div>
     </section>
@@ -173,6 +162,17 @@
     <section class="section story-section" id="about">
       <div class="story-number">2006</div>
       <div class="story-copy"><p class="eyebrow">ESTABLISHED IN OKLAHOMA CITY</p><h2>Built in Oklahoma City. Trusted since 2006.</h2><p>Tornado Tattoo opened in 2006, during the first year tattooing became legal in Oklahoma. Since then, Josh and the team have built a reputation for original artwork, honest guidance, and custom tattoos designed to look great for years to come.</p><blockquote>“Josh has been my go-to tattoo artist for over 10 years. From my military sleeve to the smaller pieces I’ve added along the way, every tattoo he has done represents part of my story. He understands what I’m trying to create and always turns it into something better than I imagined. When I want another tattoo, Josh is the person I call.”<cite>— Paul Jacobsen</cite></blockquote></div>
+    </section>
+
+    <section class="section shop-visit-section" id="visit">
+      <figure class="shop-visit-photo"><img src="assets/tornado-tattoo-shop-oklahoma-city.webp" width="380" height="676" loading="lazy" decoding="async" alt="Exterior storefront and Tornado Tattoo sign at 3306 North MacArthur Boulevard in Oklahoma City"><figcaption>Tornado Tattoo on North MacArthur Boulevard in Oklahoma City.</figcaption></figure>
+      <div class="shop-visit-copy">
+        <p class="eyebrow">Visit Tornado Tattoo</p>
+        <h2>A real Oklahoma City shop—with a sign that is hard to miss.</h2>
+        <p>Visit Tornado Tattoo at 3306 N MacArthur Blvd in Oklahoma City. The shop is open Tuesday through Saturday from noon to 8:00 PM. Walk-ins are welcomed when artist availability allows, but calling ahead is the safest way to confirm same-day space.</p>
+        <div class="shop-visit-facts"><div><span>Address</span><p>3306 N MacArthur Blvd<br>Oklahoma City, OK 73122</p></div><div><span>Shop Hours</span><p>Tuesday–Saturday<br>12:00 PM–8:00 PM</p></div></div>
+        <div class="shop-visit-actions"><a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=3306+N+MacArthur+Blvd+Oklahoma+City+OK+73122" target="_blank" rel="noopener noreferrer">Get Directions</a><a class="button button-outline" href="tel:+14056014445">Call Before You Drive</a></div>
+      </div>
     </section>
 
     <section class="section faq-section" id="faq">
@@ -190,7 +190,7 @@
       <aside class="consultation-form booking-panel" aria-label="Start a tattoo consultation"><div class="form-heading"><span>Start here</span><h3>Book a consultation</h3><p>Tell the shop what you have in mind, where you want it, the approximate size, and whether you have reference images.</p></div><div class="booking-actions"><a class="button" href="https://bookedin.com/book/tornado-tattoo-1/services">Book Online</a><a class="button button-outline" href="tel:+14056014445">Call (405) 601-4445</a><a class="button button-outline" href="mailto:tornadotattoookc@gmail.com?subject=Tattoo%20consultation">Email the shop</a><a class="instagram-link" href="https://www.instagram.com/tornadotattoo/" target="_blank" rel="noopener noreferrer">Message @tornadotattoo on Instagram ↗</a></div></aside>
     </section>
 
-    <footer class="site-footer"><div class="brand"><span>Tornado</span> Tattoo</div><p>Premium custom tattoos in Oklahoma City since 2006.</p><div><a href="https://www.instagram.com/tornadotattoo/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="tel:+14056014445">Call the shop</a><a href="#top">Back to top ↑</a></div></footer>
+    <footer class="site-footer"><div class="brand"><span>Tornado</span> Tattoo</div><p>Premium custom tattoos in Oklahoma City since 2006.</p><div><a href="josh-poindexter-tattoo-artist-oklahoma-city.html">Josh</a><a href="https://www.instagram.com/tornadotattoo/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="tel:+14056014445">Call the shop</a><a href="#top">Back to top ↑</a></div></footer>
   </main>
 </body>
 </html>
