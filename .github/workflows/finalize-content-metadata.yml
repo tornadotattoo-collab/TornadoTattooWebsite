@@ -1,0 +1,87 @@
+name: Finalize content metadata
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - synchronize
+    paths:
+      - .github/workflows/finalize-content-metadata.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out content branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/high-intent-content-case-studies
+          fetch-depth: 0
+
+      - name: Correct Article attribution and internal link
+        run: |
+          python3 <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          article_pages = []
+          for path in Path('.').glob('*.html'):
+              html = path.read_text(encoding='utf-8')
+              matches = re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)
+              if not matches:
+                  continue
+              data = json.loads(matches[0])
+              changed = False
+              for node in data.get('@graph', []):
+                  if node.get('@type') == 'Article':
+                      node['author'] = {'@id': 'https://tornadotattoo.com/#business'}
+                      changed = True
+                      article_pages.append(path.name)
+              if changed:
+                  replacement = json.dumps(data, indent=2, ensure_ascii=False)
+                  html = re.sub(
+                      r'<script type="application/ld\+json">.*?</script>',
+                      f'<script type="application/ld+json">{replacement}</script>',
+                      html,
+                      count=1,
+                      flags=re.S,
+                  )
+                  path.write_text(html, encoding='utf-8')
+
+          path = Path('black-and-gray-tattoos-oklahoma-city.html')
+          html = path.read_text(encoding='utf-8')
+          old = '<a class="project-card" href="black-and-gray-tattoos-oklahoma-city.html"><img src="assets/josh-wolf-hand.webp"'
+          new = '<a class="project-card" href="josh-poindexter-tattoo-artist-oklahoma-city.html"><img src="assets/josh-wolf-hand.webp"'
+          if old not in html:
+              raise RuntimeError('Expected black-and-gray self-link was not found')
+          path.write_text(html.replace(old, new, 1), encoding='utf-8')
+
+          if not article_pages:
+              raise RuntimeError('No Article pages were updated')
+
+          for filename in article_pages:
+              html = Path(filename).read_text(encoding='utf-8')
+              block = re.search(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)
+              data = json.loads(block.group(1))
+              articles = [node for node in data.get('@graph', []) if node.get('@type') == 'Article']
+              if not articles or any(node.get('author', {}).get('@id') != 'https://tornadotattoo.com/#business' for node in articles):
+                  raise RuntimeError(f'{filename}: Article attribution validation failed')
+
+          print(f'Updated {len(article_pages)} Article pages')
+          PY
+
+      - name: Commit final production metadata
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/finalize-content-metadata.yml
+          git add -A
+          git diff --cached --check
+          git commit -m "Finalize content attribution and internal links"
+          git push origin HEAD:agent/high-intent-content-case-studies
