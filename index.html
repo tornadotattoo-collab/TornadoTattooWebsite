@@ -72,12 +72,25 @@
     <section class="section intro-section" id="styles">
       <div class="section-heading"><div><p class="eyebrow">What we do</p><h2>Find the right artist for the work you want.</h2></div><p>A stronger site lets each specialty earn its own search visibility while giving potential clients immediate proof that the style fits.</p></div>
       <div class="service-grid">
-        <article class="service-card"><span>01</span><h3>Cover-Ups</h3><p>Thoughtful redesigns for tattoos that need a second life—planned around the existing piece, placement, and long-term result.</p><a href="#portfolio">View work <span>→</span></a></article>
-        <article class="service-card"><span>02</span><h3>Japanese</h3><p>Large-scale dragons, koi, masks, florals, and flowing compositions designed to work with the body.</p><a href="#portfolio">View work <span>→</span></a></article>
-        <article class="service-card"><span>03</span><h3>Horror</h3><p>Dark, cinematic artwork ranging from iconic characters to original concepts with texture, depth, and atmosphere.</p><a href="#portfolio">View work <span>→</span></a></article>
-        <article class="service-card"><span>04</span><h3>Traditional</h3><p>Bold lines, confident color, and timeless imagery built with the visual clarity that makes traditional work endure.</p><a href="#portfolio">View work <span>→</span></a></article>
+        <button class="service-card service-open" type="button" data-gallery="cover-ups" aria-haspopup="dialog"><span>01</span><h3>Cover-Ups</h3><p>Thoughtful redesigns for tattoos that need a second life—planned around the existing piece, placement, and long-term result.</p><span class="service-action">View work <span>→</span></span></button>
+        <button class="service-card service-open" type="button" data-gallery="japanese" aria-haspopup="dialog"><span>02</span><h3>Japanese</h3><p>Large-scale dragons, koi, masks, florals, and flowing compositions designed to work with the body.</p><span class="service-action">View work <span>→</span></span></button>
+        <button class="service-card service-open" type="button" data-gallery="horror" aria-haspopup="dialog"><span>03</span><h3>Horror</h3><p>Dark, cinematic artwork ranging from iconic characters to original concepts with texture, depth, and atmosphere.</p><span class="service-action">View work <span>→</span></span></button>
+        <button class="service-card service-open" type="button" data-gallery="traditional" aria-haspopup="dialog"><span>04</span><h3>Traditional</h3><p>Bold lines, confident color, and timeless imagery built with the visual clarity that makes traditional work endure.</p><span class="service-action">View work <span>→</span></span></button>
       </div>
     </section>
+
+    <div class="style-gallery-modal" id="style-gallery-modal" role="dialog" aria-modal="true" aria-labelledby="style-gallery-title" aria-describedby="style-gallery-description" hidden>
+      <div class="style-gallery-panel">
+        <button class="style-gallery-close" type="button" aria-label="Close specialty gallery">×</button>
+        <header class="style-gallery-header">
+          <p class="eyebrow">Selected work</p>
+          <h2 id="style-gallery-title"></h2>
+          <p id="style-gallery-description"></p>
+        </header>
+        <div class="style-gallery-grid" id="style-gallery-grid" aria-live="polite"></div>
+        <p class="style-gallery-hint">Select a tattoo to view it full screen.</p>
+      </div>
+    </div>
 
     <section class="section portfolio-section" id="portfolio">
       <div class="section-heading light-heading"><div><p class="eyebrow">Selected work</p><h2>The portfolio should do the selling.</h2></div><p>Nine selected pieces by Josh demonstrate large-scale composition, black-and-gray detail, ornamental linework, traditional tattooing, and saturated color. Select any image to view the complete piece.</p></div>
