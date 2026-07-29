@@ -7,6 +7,12 @@ on:
     paths:
       - .github/workflows/technical-seo-build.yml
       - scripts/apply-technical-seo.py
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/technical-seo-build.yml
+      - scripts/apply-technical-seo.py
 
 permissions:
   contents: write
