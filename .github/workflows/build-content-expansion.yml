@@ -26,10 +26,9 @@ jobs:
           ref: agent/high-intent-content-case-studies
           fetch-depth: 0
 
-      - name: Verify and restore validated generator
+      - name: Restore and verify validated generator
         run: |
           cat .github/content-payload/part*.txt > /tmp/content-payload.b64
-          echo "19b6f4381bfbe0277c2509b46e65e27660facb68184306d68a1ba26f1adf9f56  /tmp/content-payload.b64" | sha256sum --check
           base64 --decode /tmp/content-payload.b64 | gzip --decompress > /tmp/build-content-expansion.py
           echo "f9aa42818b69b1320c68880d864aa737bdeec92e00b1eaa5878d84c1afa3930c  /tmp/build-content-expansion.py" | sha256sum --check
           python3 -m py_compile /tmp/build-content-expansion.py
