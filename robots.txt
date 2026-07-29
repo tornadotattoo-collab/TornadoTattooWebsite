@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://tornadotattoo.com/sitemap.xml
+Sitemap: https://tornadotattoo.com/image-sitemap.xml
