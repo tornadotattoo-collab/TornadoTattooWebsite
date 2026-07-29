@@ -26,6 +26,16 @@ jobs:
           ref: agent/high-intent-content-case-studies
           fetch-depth: 0
 
+      - name: Verify transferred payload chunks
+        run: |
+          wc -c .github/content-payload/part*.txt
+          sha256sum .github/content-payload/part*.txt
+          echo "2862b063b6629f197d52ae77262e0ff80c18872b9258bb4d2baa31ec7c63900d  .github/content-payload/part00.txt" | sha256sum --check
+          echo "c3cc065c415f325d5322994eb62fa7c8b8f43d8679f1fa72e8e0f07f58d026be  .github/content-payload/part01.txt" | sha256sum --check
+          echo "e22ff48584d3840f7afb50f312709c2849aef069134910c5d766b8d588937a9a  .github/content-payload/part02.txt" | sha256sum --check
+          echo "47733a3e3f3df6abc424bb6f0299389f09e28f445f1c35d6f9e4519677447f5e  .github/content-payload/part03.txt" | sha256sum --check
+          echo "dc1832061f29be4e7302783fe930892f952ce303e49c2e237962eda955934462  .github/content-payload/part04.txt" | sha256sum --check
+
       - name: Restore and verify validated generator
         run: |
           cat .github/content-payload/part*.txt > /tmp/content-payload.b64
