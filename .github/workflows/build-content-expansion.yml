@@ -1,9 +1,13 @@
 name: Build high-intent content expansion
 
 on:
-  push:
+  pull_request:
     branches:
-      - agent/high-intent-content-case-studies
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
     paths:
       - .github/content-payload/**
       - .github/workflows/build-content-expansion.yml
