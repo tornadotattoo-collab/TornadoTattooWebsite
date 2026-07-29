@@ -28,17 +28,28 @@ jobs:
 
       - name: Verify transferred payload chunks
         run: |
-          wc -c .github/content-payload/part*.txt
-          sha256sum .github/content-payload/part*.txt
           echo "2862b063b6629f197d52ae77262e0ff80c18872b9258bb4d2baa31ec7c63900d  .github/content-payload/part00.txt" | sha256sum --check
           echo "c3cc065c415f325d5322994eb62fa7c8b8f43d8679f1fa72e8e0f07f58d026be  .github/content-payload/part01.txt" | sha256sum --check
-          echo "e22ff48584d3840f7afb50f312709c2849aef069134910c5d766b8d588937a9a  .github/content-payload/part02.txt" | sha256sum --check
+          echo "c8b165348f0f57cbe446474fe554238c14e6ec330f207538806f556ced60e68a  .github/content-payload/part02a.txt" | sha256sum --check
+          echo "1d324fe02904d25adac1270441e667d943148dc7febc57bcaa0259d1a320f8bc  .github/content-payload/part02b.txt" | sha256sum --check
+          echo "35ab2670e8584d5cb170c1eac69c39afb447bf796c4171864472d2360b49f91a  .github/content-payload/part02c.txt" | sha256sum --check
+          echo "f615b29aef5087e16260d3989fff6f3a2a4ee30517e67b1c1d9144404393a542  .github/content-payload/part02d.txt" | sha256sum --check
           echo "47733a3e3f3df6abc424bb6f0299389f09e28f445f1c35d6f9e4519677447f5e  .github/content-payload/part03.txt" | sha256sum --check
           echo "dc1832061f29be4e7302783fe930892f952ce303e49c2e237962eda955934462  .github/content-payload/part04.txt" | sha256sum --check
 
       - name: Restore and verify validated generator
         run: |
-          cat .github/content-payload/part*.txt > /tmp/content-payload.b64
+          cat \
+            .github/content-payload/part00.txt \
+            .github/content-payload/part01.txt \
+            .github/content-payload/part02a.txt \
+            .github/content-payload/part02b.txt \
+            .github/content-payload/part02c.txt \
+            .github/content-payload/part02d.txt \
+            .github/content-payload/part03.txt \
+            .github/content-payload/part04.txt \
+            > /tmp/content-payload.b64
+          echo "19b6f4381bfbe0277c2509b46e65e27660facb68184306d68a1ba26f1adf9f56  /tmp/content-payload.b64" | sha256sum --check
           base64 --decode /tmp/content-payload.b64 | gzip --decompress > /tmp/build-content-expansion.py
           echo "f9aa42818b69b1320c68880d864aa737bdeec92e00b1eaa5878d84c1afa3930c  /tmp/build-content-expansion.py" | sha256sum --check
           python3 -m py_compile /tmp/build-content-expansion.py
