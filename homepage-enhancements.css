@@ -163,6 +163,24 @@
 .shop-visit-facts p { margin: 9px 0 0; color: #d2ccc4; font-size: 14px; line-height: 1.6; }
 .shop-visit-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
 
+/* FAQ and booking conversion block */
+.faq-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .75fr);
+  gap: clamp(44px, 7vw, 110px);
+  align-items: start;
+}
+.faq-content { min-width: 0; }
+.faq-content .section-heading { margin-bottom: 36px; }
+.faq-booking {
+  position: sticky;
+  top: 32px;
+  align-self: start;
+  margin-top: 6px;
+}
+.faq-booking .form-heading h3 { font-size: clamp(34px, 3vw, 48px); }
+.faq-booking .form-heading p { font-size: 14px; line-height: 1.65; }
+
 /* Expanded internal-link footer */
 .site-footer.site-footer-expanded {
   min-height: 0;
@@ -219,6 +237,8 @@
   .shop-visit-section { grid-template-columns: 1fr; }
   .shop-visit-photo { max-width: 620px; }
   .shop-visit-photo img { height: auto; }
+  .faq-section { grid-template-columns: 1fr; }
+  .faq-booking { position: static; max-width: 720px; }
 }
 
 @media (max-width: 820px) {
