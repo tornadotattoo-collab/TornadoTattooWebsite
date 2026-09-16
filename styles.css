@@ -181,6 +181,7 @@ body.lightbox-open { overflow: hidden; }
 .lightbox-close:hover, .lightbox-nav:hover { border-color: #d3202a; background: #d3202a; }
 .lightbox-close { width: 48px; height: 48px; position: absolute; top: 22px; right: 22px; z-index: 2; font-size: 30px; line-height: 1; }
 .lightbox-nav { width: 58px; height: 58px; font-size: 24px; }
+.lightbox-nav[hidden] { display: none !important; }
 .lightbox-nav:hover { transform: scale(1.05); }
 
 .artist-section { background: var(--bg); }
