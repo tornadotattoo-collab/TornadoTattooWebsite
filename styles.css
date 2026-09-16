@@ -171,8 +171,27 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 body.lightbox-open { overflow: hidden; }
 .portfolio-lightbox { position: fixed; inset: 0; z-index: 1000; display: grid; grid-template-columns: 72px minmax(0, 1fr) 72px; align-items: center; gap: 18px; padding: 32px; background: rgba(3,3,3,.97); }
 .portfolio-lightbox[hidden] { display: none; }
-.portfolio-lightbox figure { min-width: 0; max-width: min(1100px, calc(100vw - 210px)); max-height: calc(100vh - 64px); display: grid; grid-template-rows: minmax(0, 1fr) auto; justify-self: center; margin: 0; }
-.portfolio-lightbox figure img { max-width: 100%; max-height: calc(100vh - 160px); display: block; justify-self: center; object-fit: contain; }
+.portfolio-lightbox figure {
+  min-width: 0;
+  width: fit-content;
+  max-width: min(1100px, calc(100vw - 210px));
+  max-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  margin: 0;
+}
+.portfolio-lightbox figure img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: calc(100vh - 160px);
+  display: block;
+  flex: 0 0 auto;
+  object-fit: contain;
+  background: transparent;
+}
 .portfolio-lightbox figcaption { padding: 18px 2px 0; text-align: center; }
 .portfolio-lightbox figcaption h3 { margin: 0; font-family: Georgia, serif; font-size: clamp(20px, 2vw, 30px); font-weight: 500; }
 .portfolio-lightbox figcaption p { margin: 7px 0 0; color: #d3202a; font: 800 10px/1 Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; }
