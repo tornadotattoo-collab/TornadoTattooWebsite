@@ -103,11 +103,12 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .style-gallery-item img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .45s cubic-bezier(.22,.61,.36,1), filter .3s ease; }
 .style-gallery-item:hover img { transform: scale(1.035); filter: contrast(1.04) saturate(1.05); }
 .style-gallery-item-image.style-gallery-comparison {
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) !important;
   align-items: stretch;
-  aspect-ratio: 8 / 5;
+  aspect-ratio: 8 / 5 !important;
+  height: auto !important;
   gap: 1px;
   background: #332d29;
 }
@@ -125,6 +126,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   height: 100%;
   min-width: 0;
   min-height: 0;
+  display: block;
   object-fit: contain;
   object-position: center;
   background: #080808;
