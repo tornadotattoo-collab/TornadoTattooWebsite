@@ -154,6 +154,7 @@ body.lightbox-open { overflow: hidden; }
 .portfolio-lightbox { position: fixed; inset: 0; z-index: 1000; display: grid; grid-template-columns: 72px minmax(0, 1fr) 72px; align-items: center; gap: 18px; padding: 32px; background: rgba(3,3,3,.97); }
 .portfolio-lightbox[hidden] { display: none; }
 .portfolio-lightbox figure {
+  grid-column: 2;
   min-width: 0;
   width: fit-content;
   max-width: min(1100px, calc(100vw - 210px));
