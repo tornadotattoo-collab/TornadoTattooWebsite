@@ -16,10 +16,29 @@ const galleryData = {
     title: "Cover-Up Planning",
     description: "Representative examples of Josh’s composition, contrast, and coverage work. Every cover-up depends on the existing tattoo and should be evaluated during a consultation.",
     items: [
-      { src: "assets/josh-black-guitar.webp", title: "Black guitar", category: "Black & Gray • High contrast", alt: "Black guitar tattoo by Josh Poindexter" },
-      { src: "assets/josh-tiger-skulls-backpiece.webp", title: "Tiger and skulls backpiece", category: "Black & Gray • Large-scale", alt: "Large black-and-gray tiger and skulls backpiece tattoo by Josh Poindexter" },
-      { src: "assets/josh-color-owl-sleeve.webp", title: "Color owl sleeve", category: "Illustrative • Color", alt: "Full color owl and floral sleeve tattoo by Josh Poindexter" },
-      { src: "assets/josh-blue-gemstone-sleeve.webp", title: "Blue gemstone sleeve", category: "Ornamental • Color", alt: "Blue gemstone and ornamental color sleeve tattoo by Josh Poindexter" }
+      {
+        src: "assets/josh-coverup-rework.jpg",
+        title: "Cover-up / rework",
+        category: "Cover-Up • Color",
+        alt: "Color cover-up and rework tattoo by Josh Poindexter",
+        lightboxItems: [
+          { src: "assets/josh-coverup-rework.jpg", title: "Cover-up / rework", category: "Cover-Up • Color", alt: "Color cover-up and rework tattoo by Josh Poindexter" }
+        ]
+      },
+      {
+        title: "Cover-up transformation",
+        category: "Before & After",
+        alt: "Before and after cover-up tattoo transformation by Josh Poindexter",
+        comparison: true,
+        images: [
+          { src: "assets/josh-coverup-before.jpg", title: "Cover-up before", category: "Before", alt: "Existing tattoo before cover-up work by Josh Poindexter" },
+          { src: "assets/josh-coverup-after.jpg", title: "Cover-up after", category: "After", alt: "Finished cover-up tattoo by Josh Poindexter" }
+        ],
+        lightboxItems: [
+          { src: "assets/josh-coverup-before.jpg", title: "Cover-up before", category: "Before", alt: "Existing tattoo before cover-up work by Josh Poindexter" },
+          { src: "assets/josh-coverup-after.jpg", title: "Cover-up after", category: "After", alt: "Finished cover-up tattoo by Josh Poindexter" }
+        ]
+      }
     ]
   },
   japanese: {
@@ -137,12 +156,30 @@ function renderStyleGallery(key) {
 
     const imageWrap = document.createElement("span");
     imageWrap.className = "style-gallery-item-image";
-    const image = document.createElement("img");
-    image.src = item.src;
-    image.alt = item.alt;
-    image.loading = "lazy";
-    image.decoding = "async";
-    imageWrap.append(image);
+    if (item.comparison) {
+      imageWrap.classList.add("style-gallery-comparison");
+      item.images.forEach((comparisonImage, imageIndex) => {
+        const panel = document.createElement("span");
+        panel.className = "style-gallery-comparison-panel";
+        const image = document.createElement("img");
+        image.src = comparisonImage.src;
+        image.alt = comparisonImage.alt;
+        image.loading = "lazy";
+        image.decoding = "async";
+        const label = document.createElement("span");
+        label.className = "style-gallery-comparison-label";
+        label.textContent = imageIndex === 0 ? "Before" : "After";
+        panel.append(image, label);
+        imageWrap.append(panel);
+      });
+    } else {
+      const image = document.createElement("img");
+      image.src = item.src;
+      image.alt = item.alt;
+      image.loading = "lazy";
+      image.decoding = "async";
+      imageWrap.append(image);
+    }
 
     const copy = document.createElement("span");
     copy.className = "style-gallery-item-copy";
@@ -154,7 +191,7 @@ function renderStyleGallery(key) {
 
     button.append(imageWrap, copy);
     button.addEventListener("click", () => {
-      openPortfolioLightbox(gallery.items, index, { trigger: button, returnToStyleGallery: true });
+      openPortfolioLightbox(item.lightboxItems || [item], 0, { trigger: button, returnToStyleGallery: true });
     });
     styleGalleryGrid.append(button);
   });
