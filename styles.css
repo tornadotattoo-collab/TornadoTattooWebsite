@@ -132,6 +132,18 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   background: #080808;
 }
 .style-gallery-comparison-label { position: absolute; left: 9px; bottom: 9px; padding: 6px 7px; background: rgba(0,0,0,.78); color: #fff; font: 800 8px/1 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.style-gallery-item-image-contain {
+  aspect-ratio: auto !important;
+  height: auto !important;
+  overflow: hidden;
+  background: #080808;
+}
+.style-gallery-item-image-contain img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+}
 .style-gallery-item-copy { padding: 16px 17px 18px; border-top: 1px solid #332d29; }
 .style-gallery-item-copy strong { display: block; font-family: Georgia, serif; font-size: 17px; font-weight: 500; }
 .style-gallery-item-copy span { display: block; margin-top: 7px; color: #a0978e; font: 700 9px/1 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
