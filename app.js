@@ -13,8 +13,8 @@ navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click"
 
 const galleryData = {
   "cover-ups": {
-    title: "Cover-Up Planning",
-    description: "Representative examples of Josh’s composition, contrast, and coverage work. Every cover-up depends on the existing tattoo and should be evaluated during a consultation.",
+    title: "Cover-Ups",
+    description: "Documented cover-up and rework examples by Josh. These before-and-after photos show how existing tattoos can be incorporated into larger, more readable designs.",
     items: [
       {
         src: "assets/josh-coverup-rework.jpg",
