@@ -26,18 +26,11 @@ const galleryData = {
         ]
       },
       {
+        src: "assets/josh-coverup-before-after.jpg",
         title: "Cover-up transformation",
-        category: "Before & After",
-        alt: "Before and after cover-up tattoo transformation by Josh Poindexter",
-        comparison: true,
-        images: [
-          { src: "assets/josh-coverup-before.jpg", title: "Cover-up before", category: "Before", alt: "Existing tattoo before cover-up work by Josh Poindexter" },
-          { src: "assets/josh-coverup-after.jpg", title: "Cover-up after", category: "After", alt: "Finished cover-up tattoo by Josh Poindexter" }
-        ],
-        lightboxItems: [
-          { src: "assets/josh-coverup-before.jpg", title: "Cover-up before", category: "Before", alt: "Existing tattoo before cover-up work by Josh Poindexter" },
-          { src: "assets/josh-coverup-after.jpg", title: "Cover-up after", category: "After", alt: "Finished cover-up tattoo by Josh Poindexter" }
-        ]
+        category: "Before → After",
+        alt: "Before-and-after cover-up tattoo transformation by Josh Poindexter",
+        contain: true
       }
     ]
   },
@@ -113,6 +106,13 @@ function showLightboxImage(index) {
   const item = activeLightboxItems[activeLightboxIndex];
   lightboxImage.src = item.src;
   lightboxImage.alt = item.alt;
+  lightboxImage.loading = "eager";
+  lightboxImage.decoding = "sync";
+  lightboxImage.style.setProperty("width", "auto", "important");
+  lightboxImage.style.setProperty("height", "auto", "important");
+  lightboxImage.style.setProperty("max-width", "100%", "important");
+  lightboxImage.style.setProperty("max-height", "calc(100vh - 160px)", "important");
+  lightboxImage.style.setProperty("object-fit", "contain", "important");
   lightboxTitle.textContent = item.title;
   lightboxCategory.textContent = item.category;
 }
@@ -156,30 +156,21 @@ function renderStyleGallery(key) {
 
     const imageWrap = document.createElement("span");
     imageWrap.className = "style-gallery-item-image";
-    if (item.comparison) {
-      imageWrap.classList.add("style-gallery-comparison");
-      item.images.forEach((comparisonImage, imageIndex) => {
-        const panel = document.createElement("span");
-        panel.className = "style-gallery-comparison-panel";
-        const image = document.createElement("img");
-        image.src = comparisonImage.src;
-        image.alt = comparisonImage.alt;
-        image.loading = "lazy";
-        image.decoding = "async";
-        const label = document.createElement("span");
-        label.className = "style-gallery-comparison-label";
-        label.textContent = imageIndex === 0 ? "Before" : "After";
-        panel.append(image, label);
-        imageWrap.append(panel);
-      });
-    } else {
-      const image = document.createElement("img");
-      image.src = item.src;
-      image.alt = item.alt;
-      image.loading = "lazy";
-      image.decoding = "async";
-      imageWrap.append(image);
+    const image = document.createElement("img");
+    image.src = item.src;
+    image.alt = item.alt;
+    image.loading = item.contain ? "eager" : "lazy";
+    image.decoding = "async";
+    if (item.contain) {
+      imageWrap.classList.add("style-gallery-item-image-contain");
+      imageWrap.style.setProperty("aspect-ratio", "auto", "important");
+      imageWrap.style.setProperty("height", "auto", "important");
+      image.style.setProperty("width", "100%", "important");
+      image.style.setProperty("height", "auto", "important");
+      image.style.setProperty("aspect-ratio", "auto", "important");
+      image.style.setProperty("object-fit", "contain", "important");
     }
+    imageWrap.append(image);
 
     const copy = document.createElement("span");
     copy.className = "style-gallery-item-copy";
