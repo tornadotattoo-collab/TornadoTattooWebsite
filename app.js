@@ -13,13 +13,12 @@ navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click"
 
 const galleryData = {
   "cover-ups": {
-    title: "Cover-Up Planning",
-    description: "Representative examples of Josh’s composition, contrast, and coverage work. Every cover-up depends on the existing tattoo and should be evaluated during a consultation.",
+    title: "Cover-Ups",
+    description: "Documented cover-up and rework examples by Josh. These before-and-after photos show how existing tattoos can be incorporated into larger, more readable designs.",
     items: [
-      { src: "assets/josh-black-guitar.webp", title: "Black guitar", category: "Black & Gray • High contrast", alt: "Black guitar tattoo by Josh Poindexter" },
-      { src: "assets/josh-tiger-skulls-backpiece.webp", title: "Tiger and skulls backpiece", category: "Black & Gray • Large-scale", alt: "Large black-and-gray tiger and skulls backpiece tattoo by Josh Poindexter" },
-      { src: "assets/josh-color-owl-sleeve.webp", title: "Color owl sleeve", category: "Illustrative • Color", alt: "Full color owl and floral sleeve tattoo by Josh Poindexter" },
-      { src: "assets/josh-blue-gemstone-sleeve.webp", title: "Blue gemstone sleeve", category: "Ornamental • Color", alt: "Blue gemstone and ornamental color sleeve tattoo by Josh Poindexter" }
+      { src: "assets/josh-coverup-goth-girl-before-after.webp", title: "Cover-up rework", category: "Documented cover-up • Before & after", alt: "Before-and-after color cover-up and rework tattoo by Josh Poindexter" },
+      { src: "assets/josh-coverup-koi-back-before.webp", title: "Koi back cover-up", category: "Documented cover-up • Before", alt: "Before photo of a large faded back tattoo prior to cover-up work by Josh Poindexter" },
+      { src: "assets/josh-coverup-koi-back-after.webp", title: "Koi back cover-up", category: "Documented cover-up • After", alt: "After photo of a large koi and lotus back cover-up tattoo by Josh Poindexter" }
     ]
   },
   japanese: {
