@@ -90,48 +90,18 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 
 .style-gallery-modal { position: fixed; inset: 0; z-index: 900; display: grid; place-items: center; padding: clamp(16px, 4vw, 54px); background: rgba(3,3,3,.94); }
 .style-gallery-modal[hidden] { display: none; }
-.style-gallery-panel { width: min(1320px, 100%); max-height: calc(100vh - clamp(32px, 8vw, 108px)); position: relative; overflow: auto; padding: clamp(28px, 4vw, 58px); border: 1px solid color-mix(in srgb, var(--accent) 48%, #302b27); background: #111; box-shadow: 0 32px 100px rgba(0,0,0,.65); }
+.style-gallery-panel { width: min(1120px, 100%); max-height: calc(100vh - clamp(28px, 6vw, 84px)); position: relative; overflow: auto; padding: clamp(26px, 3.5vw, 44px); border: 1px solid color-mix(in srgb, var(--accent) 48%, #302b27); background: #111; box-shadow: 0 32px 100px rgba(0,0,0,.65); }
 .style-gallery-close { width: 48px; height: 48px; position: absolute; top: 18px; right: 18px; z-index: 2; border: 1px solid rgba(255,255,255,.22); background: #0c0c0c; color: #f7f7f5; font-size: 30px; line-height: 1; cursor: pointer; transition: border-color .2s ease, background .2s ease; }
 .style-gallery-close:hover { border-color: var(--accent); background: var(--accent); }
 .style-gallery-header { max-width: 900px; padding-right: 60px; }
 .style-gallery-header .eyebrow { margin-bottom: 14px; }
 .style-gallery-header h2 { margin: 0; font-family: Didot, "Bodoni MT", Georgia, serif; font-size: clamp(42px, 5vw, 72px); font-weight: 500; letter-spacing: -.035em; line-height: .96; }
 .style-gallery-header > p:last-child { max-width: 780px; margin: 20px 0 0; color: var(--soft-text); font-size: 16px; line-height: 1.65; }
-.style-gallery-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 1.5vw, 22px); margin-top: 38px; }
-.style-gallery-item { min-width: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; overflow: hidden; border: 1px solid #332d29; padding: 0; background: #181818; color: inherit; text-align: left; cursor: zoom-in; }
+.style-gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); align-items: start; gap: clamp(14px, 1.5vw, 20px); margin-top: 30px; }
+.style-gallery-item { min-width: 0; align-self: start; height: fit-content; display: grid; grid-template-rows: auto auto; overflow: hidden; border: 1px solid #332d29; padding: 0; background: #181818; color: inherit; text-align: left; cursor: zoom-in; }
 .style-gallery-item-image { aspect-ratio: 4 / 5; overflow: hidden; background: #080808; }
 .style-gallery-item img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .45s cubic-bezier(.22,.61,.36,1), filter .3s ease; }
 .style-gallery-item:hover img { transform: scale(1.035); filter: contrast(1.04) saturate(1.05); }
-.style-gallery-item-image.style-gallery-comparison {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: minmax(0, 1fr) !important;
-  align-items: stretch;
-  aspect-ratio: 8 / 5 !important;
-  height: auto !important;
-  gap: 1px;
-  background: #332d29;
-}
-.style-gallery-comparison-panel {
-  min-width: 0;
-  min-height: 0;
-  height: auto;
-  position: relative;
-  display: grid;
-  overflow: hidden;
-  background: #080808;
-}
-.style-gallery-comparison-panel img {
-  width: 100%;
-  height: 100%;
-  min-width: 0;
-  min-height: 0;
-  display: block;
-  object-fit: contain;
-  object-position: center;
-  background: #080808;
-}
-.style-gallery-comparison-label { position: absolute; left: 9px; bottom: 9px; padding: 6px 7px; background: rgba(0,0,0,.78); color: #fff; font: 800 8px/1 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
 .style-gallery-item-image-contain {
   aspect-ratio: auto !important;
   height: auto !important;
@@ -304,7 +274,7 @@ blockquote cite { display: block; margin-top: 18px; color: var(--accent); font: 
   .style-gallery-modal { padding: 12px; }
   .style-gallery-panel { max-height: calc(100vh - 24px); padding: 56px 20px 28px; }
   .style-gallery-header { padding-right: 0; }
-  .style-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .style-gallery-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); align-items: start; }
   .portfolio-section .section-heading { margin-bottom: 30px; }
   .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; }
   .portfolio-tile:nth-child(n) { grid-column: span 1; grid-row: span 1; }
