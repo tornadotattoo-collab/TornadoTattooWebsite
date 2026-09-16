@@ -101,7 +101,17 @@ function syncBodyLock() {
   document.body.classList.toggle("lightbox-open", !lightbox.hidden || !styleGalleryModal.hidden);
 }
 
+function updateLightboxNavigation() {
+  const showNavigation = activeLightboxItems.length > 1;
+  [lightboxPrevious, lightboxNext].forEach((button) => {
+    button.hidden = !showNavigation;
+    button.tabIndex = showNavigation ? 0 : -1;
+    button.setAttribute("aria-hidden", String(!showNavigation));
+  });
+}
+
 function showLightboxImage(index) {
+  updateLightboxNavigation();
   activeLightboxIndex = (index + activeLightboxItems.length) % activeLightboxItems.length;
   const item = activeLightboxItems[activeLightboxIndex];
   lightboxImage.src = item.src;
@@ -225,8 +235,8 @@ lightbox.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (!lightbox.hidden) {
     if (event.key === "Escape") closePortfolioLightbox();
-    if (event.key === "ArrowLeft") showLightboxImage(activeLightboxIndex - 1);
-    if (event.key === "ArrowRight") showLightboxImage(activeLightboxIndex + 1);
+    if (activeLightboxItems.length > 1 && event.key === "ArrowLeft") showLightboxImage(activeLightboxIndex - 1);
+    if (activeLightboxItems.length > 1 && event.key === "ArrowRight") showLightboxImage(activeLightboxIndex + 1);
     return;
   }
   if (!styleGalleryModal.hidden && event.key === "Escape") closeStyleGallery();
