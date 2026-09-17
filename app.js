@@ -48,10 +48,9 @@ const galleryData = {
     title: "Horror & Dark Work",
     description: "Character-driven and atmospheric pieces demonstrating black-and-gray depth, dramatic contrast, texture, and unsettling detail.",
     items: [
-      { src: "assets/josh-tiger-skulls-backpiece.webp", title: "Tiger and skulls backpiece", category: "Dark • Large-scale", alt: "Large tiger and skulls backpiece tattoo by Josh Poindexter" },
-      { src: "assets/josh-kiss-demon.webp", title: "The Demon", category: "Character portrait • Color", alt: "The Demon character portrait tattoo by Josh Poindexter" },
-      { src: "assets/josh-wolf-hand.webp", title: "Red-eyed wolf", category: "Black & Gray • Hand", alt: "Black-and-gray snarling wolf hand tattoo with red eyes by Josh Poindexter" },
-      { src: "assets/josh-sugar-skull.webp", title: "Sugar skull portrait", category: "Illustrative • Color", alt: "Color sugar skull portrait tattoo by Josh Poindexter" }
+      { src: "assets/josh-horror-freddy.webp", title: "Freddy portrait", category: "Horror • Color", alt: "Freddy horror character tattoo by Josh Poindexter" },
+      { src: "assets/josh-horror-jason.webp", title: "Jason mask", category: "Horror • Color", alt: "Jason Voorhees mask tattoo by Josh Poindexter" },
+      { src: "assets/josh-horror-pennywise.webp", title: "Pennywise portrait", category: "Horror • Black & Gray", alt: "Pennywise horror character tattoo by Josh Poindexter" }
     ]
   },
   traditional: {
