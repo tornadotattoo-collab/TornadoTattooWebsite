@@ -25,12 +25,13 @@ test("every project-card page loads the shared full-image lightbox", () => {
   }
 });
 
-test("the shared lightbox intercepts cards and uses the original uncropped image", () => {
+test("the shared lightbox intercepts cards and uses the versioned original uncropped image", () => {
   const script = fs.readFileSync(path.join(root, "image-lightbox.js"), "utf8");
 
   assert.match(script, /querySelectorAll\(["']\.project-card/);
   assert.match(script, /preventDefault\(\)/);
-  assert.match(script, /currentSrc\s*\|\|\s*image\.src/);
+  assert.match(script, /image\.dataset\.fullSrc/);
+  assert.doesNotMatch(script, /currentSrc\s*\|\|\s*image\.src/);
   assert.match(script, /objectFit\s*=\s*["']contain["']/);
   assert.match(script, /maxHeight/);
   assert.match(script, /Escape/);

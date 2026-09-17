@@ -1,12 +1,6 @@
 @font-face {
   font-family: "Blackwood Castle";
-  src: url("fonts/BlackwoodCastle.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Blackwood Castle Shadow";
-  src: url("fonts/BlackwoodCastleShadow.ttf") format("truetype");
+  src: url("fonts/BlackwoodCastle.woff2?v=20260917-1") format("woff2");
   font-display: swap;
 }
 
@@ -24,6 +18,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: #090909; color: #f7f7f5; font-family: Arial, Helvetica, sans-serif; }
+picture { display: block; }
 a { color: inherit; text-decoration: none; }
 button, input, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -100,6 +95,15 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .style-gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); align-items: start; gap: clamp(14px, 1.5vw, 20px); margin-top: 30px; }
 .style-gallery-item { min-width: 0; align-self: start; height: fit-content; display: grid; grid-template-rows: auto auto; overflow: hidden; border: 1px solid #332d29; padding: 0; background: #181818; color: inherit; text-align: left; cursor: zoom-in; }
 .style-gallery-item-image { aspect-ratio: 4 / 5; overflow: hidden; background: #080808; }
+.style-gallery-item-image > picture,
+.portfolio-open > picture,
+.artist-card > picture,
+.seo-hero-visual > picture,
+.seo-feature-image > picture,
+.project-card > picture {
+  width: 100%;
+  height: 100%;
+}
 .style-gallery-item img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .45s cubic-bezier(.22,.61,.36,1), filter .3s ease; }
 .style-gallery-item:hover img { transform: scale(1.035); filter: contrast(1.04) saturate(1.05); }
 .style-gallery-item-image-contain {

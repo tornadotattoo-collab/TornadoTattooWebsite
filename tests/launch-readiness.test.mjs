@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const canonicalOrigin = 'https://tornadotattoo.com';
-const socialImageUrl = `${canonicalOrigin}/assets/tornado-tattoo-social-share.jpg`;
+const socialImageUrlPattern = /^https:\/\/tornadotattoo\.com\/assets\/tornado-tattoo-social-share\.jpg\?v=[a-z0-9._-]+$/i;
 
 const publicPages = [
   'index.html',
@@ -154,7 +154,8 @@ test('every public page has canonical and complete social-sharing metadata', () 
     const expectedUrl = canonicalFor(page);
     assert.equal(html.match(/<link rel="canonical" href="([^"]+)"/i)?.[1], expectedUrl, `${page} canonical`);
     assert.equal(metaContent(html, 'property', 'og:url'), expectedUrl, `${page} og:url`);
-    assert.equal(metaContent(html, 'property', 'og:image'), socialImageUrl, `${page} og:image`);
+    const socialImageUrl = metaContent(html, 'property', 'og:image');
+    assert.match(socialImageUrl, socialImageUrlPattern, `${page} og:image`);
     assert.equal(metaContent(html, 'property', 'og:image:secure_url'), socialImageUrl, `${page} og:image:secure_url`);
     assert.equal(metaContent(html, 'property', 'og:image:type'), 'image/jpeg', `${page} og:image:type`);
     assert.equal(metaContent(html, 'property', 'og:image:width'), '1200', `${page} og:image:width`);

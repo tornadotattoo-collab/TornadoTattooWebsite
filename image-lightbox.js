@@ -14,7 +14,7 @@
     <button class="project-lightbox-close" type="button" aria-label="Close full-size tattoo image">×</button>
     <button class="project-lightbox-nav project-lightbox-previous" type="button" aria-label="View previous image">←</button>
     <figure>
-      <img class="project-lightbox-image" alt="">
+      <img class="project-lightbox-image" alt="" width="1" height="1">
       <figcaption>
         <h2 id="project-lightbox-title"></h2>
         <p id="project-lightbox-description" class="project-lightbox-description" aria-live="polite"></p>
@@ -34,7 +34,9 @@
   const items = cards.map((card) => {
     const image = card.querySelector("img");
     return {
-      source: image.currentSrc || image.src,
+      source: image.dataset.fullSrc,
+      width: Number(image.getAttribute("width")),
+      height: Number(image.getAttribute("height")),
       alt: image.alt,
       title: card.querySelector("h3")?.textContent.trim() || image.alt,
       description: card.querySelector("p")?.textContent.trim() || ""
@@ -50,6 +52,8 @@
 
     lightboxImage.src = item.source;
     lightboxImage.alt = item.alt;
+    lightboxImage.width = item.width;
+    lightboxImage.height = item.height;
     lightboxImage.loading = "eager";
     lightboxImage.decoding = "sync";
     lightboxImage.style.width = "auto";
