@@ -415,6 +415,11 @@ blockquote cite { display: block; margin-top: 18px; color: var(--accent); font: 
   }
 }
 @media (max-width: 820px) {
+  .portfolio-section .section-heading {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 24px;
+  }
   .portfolio-section .section-heading > p {
     max-width: 620px;
     justify-self: start;
