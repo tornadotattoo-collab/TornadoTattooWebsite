@@ -113,6 +113,7 @@ test('Vercel permanently redirects every confirmed WordPress URL', () => {
     ['/contact-us/', { destination: '/#visit', permanent: true }],
     ['/joshs-instagram-feed/', { destination: '/josh-poindexter-tattoo-artist-oklahoma-city.html', permanent: true }],
     ['/elementor-662/', { destination: '/josh-poindexter-tattoo-artist-oklahoma-city.html', permanent: true }],
+    ['/author/greg/', { destination: '/', permanent: true }],
     ['/index.html', { destination: '/', permanent: true }]
   ]);
   assert.deepEqual(actual, expected);
