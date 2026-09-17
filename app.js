@@ -38,10 +38,10 @@ const galleryData = {
     title: "Japanese",
     description: "Selected large-scale and Japanese-inspired work showing body flow, layered composition, strong silhouettes, and detailed storytelling.",
     items: [
-      { src: "assets/josh-samurai-backpiece.webp", title: "Samurai backpiece", category: "Japanese • Large-scale", alt: "Japanese samurai, temple, and mountain backpiece tattoo by Josh Poindexter" },
-      { src: "assets/josh-samurai-forearm.webp", title: "Samurai warrior", category: "Japanese-inspired • Black & Red", alt: "Black and red samurai warrior tattoo by Josh Poindexter" },
-      { src: "assets/josh-color-floral-sleeve.webp", title: "Floral sleeve", category: "Japanese-inspired • Color", alt: "Bright floral color sleeve tattoo by Josh Poindexter" },
-      { src: "assets/josh-traditional-tiger-shoulder.webp", title: "Tiger shoulder piece", category: "Japanese-inspired • Color", alt: "Bold color tiger shoulder tattoo by Josh Poindexter" }
+      { src: "assets/josh-japanese-backpiece-01.webp", title: "Samurai backpiece", category: "Japanese • Large-scale", alt: "Japanese samurai and temple backpiece tattoo by Josh Poindexter" },
+      { src: "assets/josh-japanese-samurai-02.webp", title: "Samurai warrior", category: "Japanese • Black & Red", alt: "Black and red samurai warrior tattoo by Josh Poindexter" },
+      { src: "assets/josh-japanese-tiger-03.webp", title: "Tiger portrait", category: "Japanese-inspired • Color", alt: "Japanese-inspired tiger portrait tattoo by Josh Poindexter" },
+      { src: "assets/josh-japanese-daruma-04.webp", title: "Daruma portrait", category: "Japanese-inspired • Color", alt: "Colorful Japanese daruma tattoo by Josh Poindexter" }
     ]
   },
   horror: {
