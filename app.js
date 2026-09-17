@@ -57,10 +57,9 @@ const galleryData = {
     title: "Traditional & Bold Color",
     description: "Bold outlines, clear silhouettes, and confident color across classic tattoo subjects and custom pop-culture work.",
     items: [
-      { src: "assets/josh-traditional-tiger-shoulder.webp", title: "Traditional tiger", category: "Traditional • Color", alt: "Bold color traditional tiger shoulder tattoo by Josh Poindexter" },
-      { src: "assets/josh-traditional-panther.webp", title: "Traditional panther", category: "Traditional • Color", alt: "Bold black and red traditional panther tattoo by Josh Poindexter" },
-      { src: "assets/josh-traditional-snake.webp", title: "Traditional snake", category: "Traditional • Color", alt: "Bold green and red traditional snake tattoo by Josh Poindexter" },
-      { src: "assets/josh-wolf-headdress.webp", title: "Wolf headdress", category: "Traditional-inspired • Color", alt: "Traditional-inspired wolf headdress tattoo by Josh Poindexter" },
+      { src: "assets/josh-traditional-01.webp", title: "Traditional piece 1", category: "Traditional • Color", alt: "Color traditional tattoo by Josh Poindexter" },
+      { src: "assets/josh-traditional-02.webp", title: "Traditional piece 2", category: "Traditional • Color", alt: "Color traditional tattoo by Josh Poindexter" },
+      { src: "assets/josh-traditional-03.webp", title: "Traditional piece 3", category: "Traditional • Color", alt: "Color traditional tattoo by Josh Poindexter" },
       { src: "assets/josh-dragon-balls.webp", title: "Dragon Balls", category: "Pop culture • Color", alt: "Bright orange Dragon Balls tattoo by Josh Poindexter" }
     ]
   }
