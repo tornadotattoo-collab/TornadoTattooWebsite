@@ -60,7 +60,6 @@ const galleryData = {
       { src: "assets/josh-traditional-01.webp", title: "Traditional piece 1", category: "Traditional • Color", alt: "Color traditional tattoo by Josh Poindexter" },
       { src: "assets/josh-traditional-02.webp", title: "Traditional piece 2", category: "Traditional • Color", alt: "Color traditional tattoo by Josh Poindexter" },
       { src: "assets/josh-traditional-03.webp", title: "Traditional piece 3", category: "Traditional • Color", alt: "Color traditional tattoo by Josh Poindexter" },
-      { src: "assets/josh-dragon-balls.webp", title: "Dragon Balls", category: "Pop culture • Color", alt: "Bright orange Dragon Balls tattoo by Josh Poindexter" }
     ]
   }
 };
