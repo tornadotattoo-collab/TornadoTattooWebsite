@@ -166,7 +166,7 @@ function renderStyleGallery(key) {
     const image = document.createElement("img");
     image.src = item.src;
     image.alt = item.alt;
-    image.loading = item.contain ? "eager" : "lazy";
+    image.loading = "eager";
     image.decoding = "async";
     if (item.contain) {
       imageWrap.classList.add("style-gallery-item-image-contain");
