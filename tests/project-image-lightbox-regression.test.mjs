@@ -54,6 +54,15 @@ test("the lightbox exposes image changes accessibly", () => {
   assert.match(script, /aria-live/);
 });
 
+test("the shared lightbox centers the image instead of using a left grid column", () => {
+  const css = fs.readFileSync(path.join(root, "content-expansion.css"), "utf8");
+
+  assert.match(css, /\.project-image-lightbox\{[^}]*display:flex/);
+  assert.match(css, /\.project-image-lightbox\{[^}]*justify-content:center/);
+  assert.doesNotMatch(css, /grid-template-columns:auto minmax\\(0,1fr\\) auto/);
+  assert.doesNotMatch(css, /\\\\n\\\\n\\.project-image-lightbox/);
+});
+
 test("the lightbox keeps navigation clear of the image on mobile", () => {
   const css = fs.readFileSync(path.join(root, "content-expansion.css"), "utf8");
 
