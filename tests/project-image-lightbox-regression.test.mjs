@@ -36,6 +36,31 @@ test("the shared lightbox intercepts cards and uses the original uncropped image
   assert.match(script, /Escape/);
 });
 
+test("the lightbox preserves modified-link behavior and traps focus", () => {
+  const script = fs.readFileSync(path.join(root, "image-lightbox.js"), "utf8");
+
+  assert.match(script, /event\.button\s*!==\s*0/);
+  assert.match(script, /event\.metaKey/);
+  assert.match(script, /event\.ctrlKey/);
+  assert.match(script, /event\.key\s*===\s*["']Tab["']/);
+  assert.match(script, /focusable/);
+  assert.match(script, /event\.preventDefault\(\)/);
+});
+
+test("the lightbox exposes image changes accessibly", () => {
+  const script = fs.readFileSync(path.join(root, "image-lightbox.js"), "utf8");
+
+  assert.match(script, /aria-describedby/);
+  assert.match(script, /aria-live/);
+});
+
+test("the lightbox keeps navigation clear of the image on mobile", () => {
+  const css = fs.readFileSync(path.join(root, "content-expansion.css"), "utf8");
+
+  assert.match(css, /\.project-lightbox-nav\{position:absolute/);
+  assert.match(css, /@media\(max-width:700px\).*\.project-lightbox-nav\{[^}]*bottom:/s);
+});
+
 test("the lightbox coverage includes every project card on the production pages", () => {
   const totalCards = pagesWithProjectCards.reduce((count, page) => {
     const html = fs.readFileSync(path.join(root, page), "utf8");
