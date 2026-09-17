@@ -8,6 +8,7 @@
   lightbox.setAttribute("role", "dialog");
   lightbox.setAttribute("aria-modal", "true");
   lightbox.setAttribute("aria-labelledby", "project-lightbox-title");
+  lightbox.setAttribute("aria-describedby", "project-lightbox-description");
   lightbox.hidden = true;
   lightbox.innerHTML = `
     <button class="project-lightbox-close" type="button" aria-label="Close full-size tattoo image">×</button>
@@ -16,7 +17,7 @@
       <img class="project-lightbox-image" alt="">
       <figcaption>
         <h2 id="project-lightbox-title"></h2>
-        <p class="project-lightbox-description"></p>
+        <p id="project-lightbox-description" class="project-lightbox-description" aria-live="polite"></p>
       </figcaption>
     </figure>
     <button class="project-lightbox-nav project-lightbox-next" type="button" aria-label="View next image">→</button>
@@ -25,7 +26,7 @@
 
   const lightboxImage = lightbox.querySelector(".project-lightbox-image");
   const lightboxTitle = lightbox.querySelector("#project-lightbox-title");
-  const lightboxDescription = lightbox.querySelector(".project-lightbox-description");
+  const lightboxDescription = lightbox.querySelector("#project-lightbox-description");
   const closeButton = lightbox.querySelector(".project-lightbox-close");
   const previousButton = lightbox.querySelector(".project-lightbox-previous");
   const nextButton = lightbox.querySelector(".project-lightbox-next");
@@ -65,6 +66,16 @@
   }
 
   function open(index, event, card) {
+    if (
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+
     event.preventDefault();
     trigger = card;
     updateImage(index);
@@ -93,8 +104,33 @@
 
   document.addEventListener("keydown", (event) => {
     if (lightbox.hidden) return;
+
+    if (event.key === "Tab") {
+      const focusable = [...lightbox.querySelectorAll("button:not([hidden])")];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (!lightbox.contains(document.activeElement)) {
+        event.preventDefault();
+        first.focus();
+      } else if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+      return;
+    }
+
     if (event.key === "Escape") close();
-    if (event.key === "ArrowLeft") updateImage(activeIndex - 1);
-    if (event.key === "ArrowRight") updateImage(activeIndex + 1);
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      updateImage(activeIndex - 1);
+    }
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      updateImage(activeIndex + 1);
+    }
   });
 })();
