@@ -453,3 +453,10 @@ blockquote cite { display: block; margin-top: 18px; color: var(--accent); font: 
     min-height: 66px;
   }
 }
+
+
+/* Bottom row image consistency */
+.portfolio-tile:nth-child(n+10) .portfolio-contain .portfolio-image {
+  padding: 0;
+  object-fit: cover;
+}
