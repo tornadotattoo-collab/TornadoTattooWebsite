@@ -31,13 +31,13 @@ Add these as services when the profile editor allows custom services. Keep price
 8. **Color Tattoos** — Saturated and limited-palette color work planned for separation, contrast, skin tone, and placement.
 9. **Sleeve Tattoos** — Connected full- or partial-arm compositions planned as one project and completed in practical stages.
 10. **Backpiece Tattoos** — Large-scale full-back compositions with a primary focal point, supporting elements, and planned session stages.
-11. **Memorial Tattoos** — Respectful custom memorial designs using portraits, handwriting, symbols, objects, places, or service-related elements.
+11. **Illustrative Tattoos** — Custom illustrative work built around clear subjects, strong composition, color, placement, and readable detail.
 
 Official service editor guidance: https://support.google.com/business/answer/9455399
 
 ## Profile description draft
 
-Tornado Tattoo is an Oklahoma City tattoo shop established in 2006. Owner and artist Josh Poindexter creates custom Japanese-inspired, traditional, horror, color, black-and-gray, cover-up, sleeve, backpiece, and memorial tattoos. Every project is planned around the client’s idea, placement, scale, and long-term readability. Walk-ins are welcomed when artist availability allows, and consultations can be booked online.
+Tornado Tattoo is an Oklahoma City tattoo shop established in 2006. Owner and artist Josh Poindexter creates custom Japanese-inspired, traditional, horror, color, black-and-gray, cover-up, sleeve, backpiece, and illustrative tattoos. Every project is planned around the client’s idea, placement, scale, and long-term readability. Walk-ins are welcomed when artist availability allows, and consultations can be booked online.
 
 Review the final character count in Google before saving. Do not add links, promotional pricing, or unnecessary keyword lists to the description.
 

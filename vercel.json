@@ -36,6 +36,11 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/memorial-tattoos-oklahoma-city.html",
+      "destination": "/illustrative-tattoos-oklahoma-city.html",
+      "permanent": true
     }
   ],
   "headers": [

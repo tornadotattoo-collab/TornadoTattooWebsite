@@ -19,7 +19,7 @@ const publicPages = [
   'black-and-gray-tattoos-oklahoma-city.html',
   'color-tattoos-oklahoma-city.html',
   'sleeve-and-backpiece-tattoos-oklahoma-city.html',
-  'memorial-tattoos-oklahoma-city.html',
+  'illustrative-tattoos-oklahoma-city.html',
   'tattoo-consultation-guide-oklahoma-city.html',
   'tattoo-aftercare-guide.html',
   'samurai-backpiece-tattoo-case-study.html',
@@ -42,7 +42,7 @@ const expectedLastModified = new Map([
   ['/black-and-gray-tattoos-oklahoma-city.html', '2026-09-17'],
   ['/color-tattoos-oklahoma-city.html', '2026-09-17'],
   ['/sleeve-and-backpiece-tattoos-oklahoma-city.html', '2026-09-17'],
-  ['/memorial-tattoos-oklahoma-city.html', '2026-09-17'],
+  ['/illustrative-tattoos-oklahoma-city.html', '2026-09-17'],
   ['/tattoo-consultation-guide-oklahoma-city.html', '2026-07-29'],
   ['/tattoo-aftercare-guide.html', '2026-07-29'],
   ['/samurai-backpiece-tattoo-case-study.html', '2026-09-17'],
@@ -106,7 +106,7 @@ test('every Contact navigation link points to the existing Visit section', () =>
   }
 });
 
-test('Vercel permanently redirects every confirmed WordPress URL', () => {
+test('Vercel permanently redirects every confirmed legacy URL', () => {
   const config = JSON.parse(read('vercel.json'));
   const actual = new Map(config.redirects.map(({ source, destination, permanent }) => [source, { destination, permanent }]));
   const expected = new Map([
@@ -114,7 +114,8 @@ test('Vercel permanently redirects every confirmed WordPress URL', () => {
     ['/joshs-instagram-feed/', { destination: '/josh-poindexter-tattoo-artist-oklahoma-city.html', permanent: true }],
     ['/elementor-662/', { destination: '/josh-poindexter-tattoo-artist-oklahoma-city.html', permanent: true }],
     ['/author/greg/', { destination: '/', permanent: true }],
-    ['/index.html', { destination: '/', permanent: true }]
+    ['/index.html', { destination: '/', permanent: true }],
+    ['/memorial-tattoos-oklahoma-city.html', { destination: '/illustrative-tattoos-oklahoma-city.html', permanent: true }]
   ]);
   assert.deepEqual(actual, expected);
 });
