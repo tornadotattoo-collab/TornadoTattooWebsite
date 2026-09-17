@@ -59,8 +59,8 @@ test("the shared lightbox centers the image instead of using a left grid column"
 
   assert.match(css, /\.project-image-lightbox\{[^}]*display:flex/);
   assert.match(css, /\.project-image-lightbox\{[^}]*justify-content:center/);
-  assert.doesNotMatch(css, /grid-template-columns:auto minmax\\(0,1fr\\) auto/);
-  assert.doesNotMatch(css, /\\\\n\\\\n\\.project-image-lightbox/);
+  assert.equal(css.includes("grid-template-columns:auto minmax(0,1fr) auto"), false);
+  assert.equal(css.includes("\\n\\n.project-image-lightbox"), false);
 });
 
 test("the lightbox keeps navigation clear of the image on mobile", () => {
