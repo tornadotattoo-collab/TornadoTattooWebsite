@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://tornadotattoo.com/</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <image:image>
       <image:loc>https://tornadotattoo.com/assets/josh-at-work.webp</image:loc>
       <image:title>Josh Poindexter tattooing at Tornado Tattoo</image:title>
@@ -24,9 +24,9 @@
       <image:caption>Full ornamental mandala leg sleeve tattoo by Josh Poindexter.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://tornadotattoo.com/assets/josh-traditional-tiger-shoulder.webp</image:loc>
-      <image:title>Oklahoma City traditional tiger tattoo</image:title>
-      <image:caption>Bold color traditional tiger shoulder tattoo by Josh Poindexter.</image:caption>
+      <image:loc>https://tornadotattoo.com/assets/josh-college-osu-cowboy.jpg</image:loc>
+      <image:title>Oklahoma State cowboy tattoo by Josh Poindexter</image:title>
+      <image:caption>Oklahoma State cowboy tattoo by Josh Poindexter.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://tornadotattoo.com/assets/josh-blue-gemstone-sleeve.webp</image:loc>
@@ -44,14 +44,14 @@
       <image:caption>Bold black and red traditional panther tattoo by Josh Poindexter.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://tornadotattoo.com/assets/josh-color-apple-branch.webp</image:loc>
-      <image:title>Color apple branch tattoo by Josh Poindexter</image:title>
-      <image:caption>Realistic red apples and green leaves color tattoo by Josh Poindexter.</image:caption>
+      <image:loc>https://tornadotattoo.com/assets/josh-college-osu-star.jpg</image:loc>
+      <image:title>Oklahoma State star tattoo by Josh Poindexter</image:title>
+      <image:caption>Oklahoma State star tattoo by Josh Poindexter.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://tornadotattoo.com/assets/josh-color-lighthouse.webp</image:loc>
-      <image:title>Color lighthouse tattoo by Josh Poindexter</image:title>
-      <image:caption>Bright illustrative lighthouse and ocean color tattoo by Josh Poindexter.</image:caption>
+      <image:loc>https://tornadotattoo.com/assets/josh-american-flag.jpg</image:loc>
+      <image:title>American flag shoulder tattoo by Josh Poindexter</image:title>
+      <image:caption>American flag shoulder tattoo by Josh Poindexter.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://tornadotattoo.com/assets/josh-horror-freddy.webp</image:loc>
@@ -97,6 +97,21 @@
       <image:loc>https://tornadotattoo.com/assets/tornado-tattoo-shop-oklahoma-city.webp</image:loc>
       <image:title>Tornado Tattoo storefront in Oklahoma City</image:title>
       <image:caption>Exterior Tornado Tattoo storefront at 3306 North MacArthur Boulevard in Oklahoma City.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tornadotattoo.com/assets/josh-oklahoma-city-thunder.jpg</image:loc>
+      <image:title>Oklahoma City Thunder tattoo by Josh Poindexter</image:title>
+      <image:caption>Oklahoma City Thunder tattoo by Josh Poindexter.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tornadotattoo.com/assets/josh-philadelphia-eagles.jpg</image:loc>
+      <image:title>Philadelphia Eagles tattoo by Josh Poindexter</image:title>
+      <image:caption>Philadelphia Eagles tattoo by Josh Poindexter.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tornadotattoo.com/assets/josh-dallas-cowboys-star.jpg</image:loc>
+      <image:title>Dallas Cowboys star tattoo by Josh Poindexter</image:title>
+      <image:caption>Dallas Cowboys star tattoo by Josh Poindexter.</image:caption>
     </image:image>
   </url>
   <url>
