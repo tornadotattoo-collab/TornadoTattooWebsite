@@ -62,7 +62,7 @@ The site's public pages are grouped by purpose:
 | `vercel.json` | Image optimization settings, redirects, and response headers |
 | `robots.txt`, `sitemap.xml`, `image-sitemap.xml` | Crawler directives and page/image discovery |
 
-`index.local-backup.html` and `local-index-changes.patch` are local/reference files, not production pages. `.vercelignore` excludes them, along with documentation and tests, from Vercel uploads.
+`.vercelignore` excludes the launch notes, documentation, and tests from Vercel uploads.
 
 ## Editing and publishing
 

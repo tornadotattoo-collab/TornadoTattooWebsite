@@ -138,15 +138,16 @@ test('only the Verispark review hosts receive a noindex response header', () => 
 test('repository-only files are excluded from Vercel uploads', () => {
   const patterns = new Set(read('.vercelignore').split(/\r?\n/).map(line => line.trim()).filter(Boolean));
   for (const excluded of [
-    'index.local-backup.html',
-    'local-index-changes.patch',
     'OPEN-ME.txt',
     'README.md',
-    '.nojekyll',
     'docs/',
     'tests/'
   ]) {
     assert.ok(patterns.has(excluded), `${excluded} is still eligible for deployment`);
+  }
+
+  for (const removed of ['index.local-backup.html', 'local-index-changes.patch', '.nojekyll']) {
+    assert.equal(fs.existsSync(path.join(root, removed)), false, `${removed} is an obsolete repository artifact`);
   }
 });
 
